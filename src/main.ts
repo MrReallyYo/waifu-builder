@@ -1,11 +1,18 @@
-/*import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
-import { Greeter } from './example/Greeter'
+import router from './router'
+import store from './store'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
 
-console.log(new Greeter("bla").greet())
+Vue.use(Buefy)
+Vue.config.productionTip = false
 
-createApp(App).mount('#app')*/
-
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
 
 import { Main } from './backend/main'
 

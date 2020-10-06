@@ -1,93 +1,99 @@
 <template>
+  <div id="container">
+    <div id="editor">
+      <div id="character" class="gridcontent">
+        <img src="https://www.dictionary.com/e/wp-content/uploads/2018/03/waifu-300x300.jpg">
+      </div>
+      <div id="slot1" class="gridcontent">
+        Flower of Life
+      </div>
+      <div id="slot2" class="gridcontent">
+        Plume of Death
+      </div>
+      <div id="slot3" class="gridcontent">
+        Sands of Eon
+      </div>
+      <div id="slot4" class="gridcontent">
+        Goblet of Eonothem
+      </div>
+      <div id="slot5" class="gridcontent">
+        Circlet of Logos
+      </div>
+      <div id="weapon" class="gridcontent">
+        Weapon
+      </div>
 
-  <div class="container" id="editor">
-    <div id="right">
-      <div id="slot1">1</div>
-      <div id="slot2">2</div>
-      <div id="slot3">3</div>
-      <div id="slot4">4</div>
-      <div id="slot5">5</div>
-    </div>
-
-    <div id="left">
-      <div id="character">C</div>
-      <div id="weapon">W</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
+
 @Component({
-  components: {
-  }
+  components: {}
 })
-export default class Builder extends Vue {}
+export default class Builder extends Vue {
+}
 </script>
 
 <style>
+#container {
+  width: auto;
+  margin: auto;
+}
+
 #editor {
-  overflow: auto;
-  background: red;
+  display: inline-grid;
+  grid-template-columns: repeat(5, minmax(80px, 15vh));
+  grid-template-rows: repeat(5, minmax(80px, 15vh));
+  grid-gap: 1px;
 }
-#left {
-  background: azure;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 80px;
-  position: absolute;
-}
-
-#right {
-  float: right;
-  background: blueviolet;
-}
-
 
 #character {
+  grid-column: 1 / 5;
+  grid-row: 1 / 5;
 }
 
 #weapon {
-  position: absolute;
-  bottom: 0px;
+  grid-column: 2 / 2;
+  grid-row: 5 / 5;
 }
 
-
 #slot1 {
-  clear: both;
-  float: right;
-  width: 80px;
-  height: 80px;
-  background: #2c3e50;
+  grid-column: 5 / 5;
+  grid-row: 1 / 1;
 }
 
 #slot2 {
-  clear: both;
-  float: right;
-  width: 80px;
-  height: 80px;
-  background: #42b983;
+  grid-column: 5 / 5;
+  grid-row: 2 / 2;
 }
+
 #slot3 {
-  clear: both;
-  float: right;
-  width: 80px;
-  height: 80px;
-  background: aliceblue;
+  grid-column: 5 / 5;
+  grid-row: 3 / 3;
 }
+
 #slot4 {
-  clear: both;
-  float: right;
-  width: 80px;
-  height: 80px;
-  background: aqua;
+  grid-column: 5 / 5;
+  grid-row: 4 / 4;
 }
+
 #slot5 {
-  clear: both;
-  float: right;
-  width: 80px;
-  height: 80px;
-  background: aquamarine;
+  grid-column: 5 / 5;
+  grid-row: 5 / 5;
 }
+
+.gridcontent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: thin;
+  border-color: yellowgreen;
+}
+
 </style>
